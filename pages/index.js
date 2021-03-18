@@ -5,6 +5,7 @@ import { useState } from 'react'
 export default function Home() {
 
   const [searchQuery, setSearchQuery] = useState('')
+  const [articleList, setArticleList] = useState([])
 
   const newsApiUrl = 'https://newsapi.org/v2/everything'
   const apiKey = 'aae4090dda494124b1d4a31f0bf042e6'
@@ -14,10 +15,12 @@ export default function Home() {
     fetch(`${newsApiUrl}?q=${searchQuery}&apiKey=${apiKey}`)
       .then((response) => {
         if (response.ok) {
-          console.log(response.json());
+          return response.json();
         } else {
-          console.log('oops');
+          return [];
         }
+      }).then(data => {
+        setArticleList(data.articles);
       })
   }
 
@@ -37,7 +40,12 @@ export default function Home() {
           <input name="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} ></input>
           <button type="submit">Search</button>
         </form>
-
+        <div>
+          ARTICLES: {articleList.length}
+        {articleList.map(article => {
+          return (<p key={article.url}> > {article.title} </p>)
+        })}
+        </div>
       </main>
 
       <footer className={styles.footer}>
