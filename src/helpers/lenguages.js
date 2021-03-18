@@ -1,0 +1,1 @@
+module.exports.AVAILABLE_LANGUAGES = ['all', 'ar', 'de', 'en', 'es', 'fr', 'he', 'it', 'nl', 'no', 'pt', 'ru', 'se', 'ud', 'zh'];
