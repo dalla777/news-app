@@ -1,11 +1,16 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { useState } from 'react'
+import useLocalStorage from '../hooks/localstorage'
+import dynamic from 'next/dynamic'
+
+const DynamicArticles = dynamic(
+  () => import('../components/articlelist'),
+  { ssr: false }
+)
 
 export default function Home() {
-
-  const [searchQuery, setSearchQuery] = useState('')
-  const [articleList, setArticleList] = useState([])
+  const [ articleData, setArticleData ] = useLocalStorage('searchResults', []);
+  const [ searchQuery, setSearchQuery ] = useLocalStorage('searchQuery', '');
 
   const newsApiUrl = 'https://newsapi.org/v2/everything'
   const apiKey = 'aae4090dda494124b1d4a31f0bf042e6'
@@ -20,7 +25,7 @@ export default function Home() {
           return [];
         }
       }).then(data => {
-        setArticleList(data.articles);
+        setArticleData(data.articles);
       })
   }
 
@@ -41,10 +46,9 @@ export default function Home() {
           <button type="submit">Search</button>
         </form>
         <div>
-          ARTICLES: {articleList.length}
-        {articleList.map(article => {
-          return (<p key={article.url}> > {article.title} </p>)
-        })}
+          ARTICLES:
+          
+          <DynamicArticles articles={articleData}></DynamicArticles>
         </div>
       </main>
 
