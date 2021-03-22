@@ -4,12 +4,11 @@
 }
 
 .searchTerm {
-    width: 90%;
+    width: 85%;
     height: 36px;
     border: 3px solid #00B4CC;
-    border-right: none;
     padding: 5px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
     outline: none;
     color: #9DBFAF;
   }
@@ -19,15 +18,16 @@
   }
   
   .searchButton {
-    width: 10%;
     height: 36px;
-    border: 1px solid #00B4CC;
     background: #00B4CC;
+    border: 1px solid #00B4CC;
+    border-radius: 5px;
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
     cursor: pointer;
+    margin: 0 20px;
     font-size: 20px;
+    width: calc(15% - 40px);
   }
 
 .paginationButton {
@@ -41,8 +41,30 @@
     font-size: 20px;
 }
 
+.searchButton:disabled,
 .paginationButton:disabled {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+.optionsWrapper {
+  margin: 20px 0 0;
+}
+
+.selectStyles{ 
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    color: #00B4CC;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0;
+    padding: 0 30px;
+    font-size: 14px;
+    min-height: 40px;
 }
