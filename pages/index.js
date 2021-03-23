@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import SearchBar from '../src/components/SearchBar';
+import SearchBar from '../components/SearchBar';
 
 
 export default function Home() {
-
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +16,8 @@ export default function Home() {
           Welcome to News App
         </h1>
         <SearchBar />
+        <div>
+        </div>
       </main>
 
       <footer className={styles.footer}>

@@ -26,7 +26,7 @@
     color: #fff;
     cursor: pointer;
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 15px;
     width: calc(15% - 40px);
   }
 
@@ -38,7 +38,8 @@
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 15px;
+    width: 10%;
 }
 
 .searchButton:disabled,
@@ -50,8 +51,12 @@
 
 .optionsWrapper {
   margin: 20px 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
+.datePicker,
 .selectStyles{ 
     background: transparent;
     border-radius: 0;
@@ -66,5 +71,21 @@
     padding: 0;
     padding: 0 30px;
     font-size: 14px;
-    min-height: 40px;
+    height: 40px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.pagination {
+  font: normal 15px arial;
+  font-family: monospace;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
 }
