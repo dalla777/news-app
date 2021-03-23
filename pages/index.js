@@ -48,7 +48,7 @@ export default function Home() {
         <div>
           ARTICLES:
           
-          <DynamicArticles articles={articleData}></DynamicArticles>
+          <DynamicArticles articles={articleData} searchQuery={searchQuery}></DynamicArticles>
         </div>
       </main>
 

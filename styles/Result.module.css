@@ -1,0 +1,48 @@
+.author {
+  border-right: 1px solid black;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.authordate {
+  font-size: 12px;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.imgholder {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.imgwrapper {
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 200px;
+  margin-right: 20px;
+  width: 200px;
+}
+
+.linkwrapper {
+  border: 1px solid transparent;
+  display: flex;
+  padding: 20px
+}
+
+.linkwrapper:hover,
+.linkwrapper:focus {
+  border-color: #00B4CC;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 65vw;
+}
