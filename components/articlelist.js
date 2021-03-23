@@ -1,10 +1,11 @@
-import Link from 'next/link'
+import SearchResult from './searchResult'
+import styles from '../styles/ResultList.module.css'
 
-export default function ArticleList({articles}) {
+export default function ArticleList({ articles, searchQuery }) {
     return (
-        <ul>
+        <ul className={styles.list}>
           {articles.map(article => {
-            return <li key={article.url}><Link href={'/article/' + encodeURIComponent(article.url)}>{article.title}</Link></li>
+            return <li key={article.url}><SearchResult article={article} searchQuery={searchQuery}></SearchResult></li>
           })}
         </ul>
     )
